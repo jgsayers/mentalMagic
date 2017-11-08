@@ -66,65 +66,68 @@ public class MentalMagic extends JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jTextAreaConsole = new javax.swing.JTextArea();
+        jTextFieldCardName = new javax.swing.JTextField();
+        jButtonCast = new javax.swing.JButton();
+        jButtonReset = new javax.swing.JButton();
+        jButtonCheck = new javax.swing.JButton();
+        jButtonRemove = new javax.swing.JButton();
+        jLabelConsole = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
+        jTextAreaCastList = new javax.swing.JTextArea();
+        jLabelCardsCast = new javax.swing.JLabel();
 
-        setPreferredSize(new java.awt.Dimension(750, 500));
+        jTextAreaConsole.setColumns(20);
+        jTextAreaConsole.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaConsole);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jTextField1.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jTextField1.setText("Card to Cast");
-
-        jButton1.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jButton1.setText("Cast");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldCardName.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        jTextFieldCardName.setText("Card to Cast");
+        jTextFieldCardName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jTextFieldCardNameActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jButton2.setText("Reset");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCast.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        jButtonCast.setText("Cast");
+        jButtonCast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonCastActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jButton3.setText("Check");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonReset.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        jButtonReset.setText("Reset");
+        jButtonReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonResetActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        jButton4.setText("Remove");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCheck.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        jButtonCheck.setText("Check");
+        jButtonCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jButtonCheckActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Console");
+        jButtonRemove.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
+        jButtonRemove.setText("Remove");
+        jButtonRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRemoveActionPerformed(evt);
+            }
+        });
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        jLabelConsole.setText("Console");
 
-        jLabel2.setText("Cards Cast");
+        jTextAreaCastList.setColumns(20);
+        jTextAreaCastList.setRows(5);
+        jScrollPane2.setViewportView(jTextAreaCastList);
+
+        jLabelCardsCast.setText("Cards Cast");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,21 +137,21 @@ public class MentalMagic extends JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                        .addComponent(jTextFieldCardName, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)
+                        .addComponent(jButtonCheck)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4)
+                        .addComponent(jButtonRemove)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(jButtonCast)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
+                        .addComponent(jButtonReset)
                         .addGap(88, 88, 88))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
-                        .addComponent(jLabel1)
+                        .addComponent(jLabelConsole)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
+                        .addComponent(jLabelCardsCast)
                         .addGap(191, 191, 191))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1)
@@ -161,64 +164,68 @@ public class MentalMagic extends JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabelConsole)
+                    .addComponent(jLabelCardsCast))
                 .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
                     .addComponent(jScrollPane1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(jTextFieldCardName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCast)
+                    .addComponent(jButtonReset)
+                    .addComponent(jButtonCheck)
+                    .addComponent(jButtonRemove))
                 .addContainerGap(306, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String currentCard=jTextField1.getText().toLowerCase();
+    private void jButtonCastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCastActionPerformed
+        String currentCard=jTextFieldCardName.getText().toLowerCase();
         if (castCards.contains(currentCard)) {
-            jTextArea1.append(currentCard + " CANNOT BE CAST"+"\n");
+            jTextAreaConsole.append(currentCard + " CANNOT BE CAST"+"\n");
         } else {
             castCards.add(currentCard);
-            jTextArea1.append(currentCard + " IS CAST"+"\n");
+            jTextAreaConsole.append(currentCard + " IS CAST"+"\n");
         }
-        jTextField1.setText("");
-        jTextArea2.setText(castCards.toString());
-    }//GEN-LAST:event_jButton1ActionPerformed
+        jTextFieldCardName.setText("");
+        jTextAreaCastList.setText(castCards.toString());
+    }//GEN-LAST:event_jButtonCastActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String currentCard=jTextField1.getText().toLowerCase();
+    private void jButtonCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCheckActionPerformed
+        String currentCard=jTextFieldCardName.getText().toLowerCase();
         if (castCards.contains(currentCard)) {
-            jTextArea1.append(currentCard + " has ALREADY been cast"+"\n");
-            jTextField1.setText("");
+            jTextAreaConsole.append(currentCard + " has ALREADY been cast"+"\n");
+            jTextFieldCardName.setText("");
         } else {
-            jTextArea1.append(currentCard + " CAN be cast"+"\n");
+            jTextAreaConsole.append(currentCard + " CAN be cast"+"\n");
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButtonCheckActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        jTextArea1.setText("Game has been reset"+"\n");
-        jTextField1.setText("");
+    private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed
+        jTextAreaConsole.setText("Game has been reset"+"\n");
+        jTextFieldCardName.setText("");
         castCards.clear();
-        jTextArea2.setText(castCards.toString());
+        jTextAreaCastList.setText(castCards.toString());
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonResetActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        String currentCard=jTextField1.getText().toLowerCase();
+    private void jButtonRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveActionPerformed
+        String currentCard=jTextFieldCardName.getText().toLowerCase();
         if (castCards.contains(currentCard)) {
             castCards.remove(currentCard);
-            jTextArea1.append(currentCard + " has been REMOVED"+"\n");
+            jTextAreaConsole.append(currentCard + " has been REMOVED"+"\n");
         } else {
-            jTextArea1.append(currentCard + " has NOT been cast"+"\n");
+            jTextAreaConsole.append(currentCard + " has NOT been cast"+"\n");
         }
-        jTextField1.setText("");
-        jTextArea2.setText(castCards.toString());
-    }//GEN-LAST:event_jButton4ActionPerformed
+        jTextFieldCardName.setText("");
+        jTextAreaCastList.setText(castCards.toString());
+    }//GEN-LAST:event_jButtonRemoveActionPerformed
+
+    private void jTextFieldCardNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCardNameActionPerformed
+        jTextFieldCardName.setText("");
+    }//GEN-LAST:event_jTextFieldCardNameActionPerformed
     public static void main(String [] args)
 	{
             MentalMagic m = new MentalMagic();
@@ -227,16 +234,16 @@ public class MentalMagic extends JFrame {
         }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton jButtonCast;
+    private javax.swing.JButton jButtonCheck;
+    private javax.swing.JButton jButtonRemove;
+    private javax.swing.JButton jButtonReset;
+    private javax.swing.JLabel jLabelCardsCast;
+    private javax.swing.JLabel jLabelConsole;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextArea jTextAreaCastList;
+    private javax.swing.JTextArea jTextAreaConsole;
+    private javax.swing.JTextField jTextFieldCardName;
     // End of variables declaration//GEN-END:variables
 }
